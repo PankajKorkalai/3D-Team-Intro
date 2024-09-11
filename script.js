@@ -3,8 +3,9 @@ function locomotive() {
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true ,
+    smooth: true,
   });
+
   locoScroll.on("scroll", ScrollTrigger.update);
 
   ScrollTrigger.scrollerProxy("#main", {
@@ -13,7 +14,6 @@ function locomotive() {
         ? locoScroll.scrollTo(value, 0, 0)
         : locoScroll.scroll.instance.scroll.y;
     },
-
     getBoundingClientRect() {
       return {
         top: 0,
@@ -22,23 +22,21 @@ function locomotive() {
         height: window.innerHeight,
       };
     },
-
     pinType: document.querySelector("#main").style.transform
       ? "transform"
       : "fixed",
   });
+
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   ScrollTrigger.refresh();
 }
 locomotive();
-
 
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
@@ -48,311 +46,480 @@ window.addEventListener("resize", function () {
 
 function files(index) {
   var data = `
-     ./images/male0001.png
-     ./images/male0002.png
-     ./images/male0003.png
-     ./images/male0004.png
-     ./images/male0005.png
-     ./images/male0006.png
-     ./images/male0007.png
-     ./images/male0008.png
-     ./images/male0009.png
-     ./images/male0010.png
-     ./images/male0011.png
-     ./images/male0012.png
-     ./images/male0013.png
-     ./images/male0014.png
-     ./images/male0015.png
-     ./images/male0016.png
-     ./images/male0017.png
-     ./images/male0018.png
-     ./images/male0019.png
-     ./images/male0020.png
-     ./images/male0021.png
-     ./images/male0022.png
-     ./images/male0023.png
-     ./images/male0024.png
-     ./images/male0025.png
-     ./images/male0026.png
-     ./images/male0027.png
-     ./images/male0028.png
-     ./images/male0029.png
-     ./images/male0030.png
-     ./images/male0031.png
-     ./images/male0032.png
-     ./images/male0033.png
-     ./images/male0034.png
-     ./images/male0035.png
-     ./images/male0036.png
-     ./images/male0037.png
-     ./images/male0038.png
-     ./images/male0039.png
-     ./images/male0040.png
-     ./images/male0041.png
-     ./images/male0042.png
-     ./images/male0043.png
-     ./images/male0044.png
-     ./images/male0045.png
-     ./images/male0046.png
-     ./images/male0047.png
-     ./images/male0048.png
-     ./images/male0049.png
-     ./images/male0050.png
-     ./images/male0051.png
-     ./images/male0052.png
-     ./images/male0053.png
-     ./images/male0054.png
-     ./images/male0055.png
-     ./images/male0056.png
-     ./images/male0057.png
-     ./images/male0058.png
-     ./images/male0059.png
-     ./images/male0060.png
-     ./images/male0061.png
-     ./images/male0062.png
-     ./images/male0063.png
-     ./images/male0064.png
-     ./images/male0065.png
-     ./images/male0066.png
-     ./images/male0067.png
-     ./images/male0068.png
-     ./images/male0069.png
-     ./images/male0070.png
-     ./images/male0071.png
-     ./images/male0072.png
-     ./images/male0073.png
-     ./images/male0074.png
-     ./images/male0075.png
-     ./images/male0076.png
-     ./images/male0077.png
-     ./images/male0078.png
-     ./images/male0079.png
-     ./images/male0080.png
-     ./images/male0081.png
-     ./images/male0082.png
-     ./images/male0083.png
-     ./images/male0084.png
-     ./images/male0085.png
-     ./images/male0086.png
-     ./images/male0087.png
-     ./images/male0088.png
-     ./images/male0089.png
-     ./images/male0090.png
-     ./images/male0091.png
-     ./images/male0092.png
-     ./images/male0093.png
-     ./images/male0094.png
-     ./images/male0095.png
-     ./images/male0096.png
-     ./images/male0097.png
-     ./images/male0098.png
-     ./images/male0099.png
-     ./images/male0100.png
-     ./images/male0101.png
-     ./images/male0102.png
-     ./images/male0103.png
-     ./images/male0104.png
-     ./images/male0105.png
-     ./images/male0106.png
-     ./images/male0107.png
-     ./images/male0108.png
-     ./images/male0109.png
-     ./images/male0110.png
-     ./images/male0111.png
-     ./images/male0112.png
-     ./images/male0113.png
-     ./images/male0114.png
-     ./images/male0115.png
-     ./images/male0116.png
-     ./images/male0117.png
-     ./images/male0118.png
-     ./images/male0119.png
-     ./images/male0120.png
-     ./images/male0121.png
-     ./images/male0122.png
-     ./images/male0123.png
-     ./images/male0124.png
-     ./images/male0125.png
-     ./images/male0126.png
-     ./images/male0127.png
-     ./images/male0128.png
-     ./images/male0129.png
-     ./images/male0130.png
-     ./images/male0131.png
-     ./images/male0132.png
-     ./images/male0133.png
-     ./images/male0134.png
-     ./images/male0135.png
-     ./images/male0136.png
-     ./images/male0137.png
-     ./images/male0138.png
-     ./images/male0139.png
-     ./images/male0140.png
-     ./images/male0141.png
-     ./images/male0142.png
-     ./images/male0143.png
-     ./images/male0144.png
-     ./images/male0145.png
-     ./images/male0146.png
-     ./images/male0147.png
-     ./images/male0148.png
-     ./images/male0149.png
-     ./images/male0150.png
-     ./images/male0151.png
-     ./images/male0152.png
-     ./images/male0153.png
-     ./images/male0154.png
-     ./images/male0155.png
-     ./images/male0156.png
-     ./images/male0157.png
-     ./images/male0158.png
-     ./images/male0159.png
-     ./images/male0160.png
-     ./images/male0161.png
-     ./images/male0162.png
-     ./images/male0163.png
-     ./images/male0164.png
-     ./images/male0165.png
-     ./images/male0166.png
-     ./images/male0167.png
-     ./images/male0168.png
-     ./images/male0169.png
-     ./images/male0170.png
-     ./images/male0171.png
-     ./images/male0172.png
-     ./images/male0173.png
-     ./images/male0174.png
-     ./images/male0175.png
-     ./images/male0176.png
-     ./images/male0177.png
-     ./images/male0178.png
-     ./images/male0179.png
-     ./images/male0180.png
-     ./images/male0181.png
-     ./images/male0182.png
-     ./images/male0183.png
-     ./images/male0184.png
-     ./images/male0185.png
-     ./images/male0186.png
-     ./images/male0187.png
-     ./images/male0188.png
-     ./images/male0189.png
-     ./images/male0190.png
-     ./images/male0191.png
-     ./images/male0192.png
-     ./images/male0193.png
-     ./images/male0194.png
-     ./images/male0195.png
-     ./images/male0196.png
-     ./images/male0197.png
-     ./images/male0198.png
-     ./images/male0199.png
-     ./images/male0200.png
-     ./images/male0201.png
-     ./images/male0202.png
-     ./images/male0203.png
-     ./images/male0204.png
-     ./images/male0205.png
-     ./images/male0206.png
-     ./images/male0207.png
-     ./images/male0208.png
-     ./images/male0209.png
-     ./images/male0210.png
-     ./images/male0211.png
-     ./images/male0212.png
-     ./images/male0213.png
-     ./images/male0214.png
-     ./images/male0215.png
-     ./images/male0216.png
-     ./images/male0217.png
-     ./images/male0218.png
-     ./images/male0219.png
-     ./images/male0220.png
-     ./images/male0221.png
-     ./images/male0222.png
-     ./images/male0223.png
-     ./images/male0224.png
-     ./images/male0225.png
-     ./images/male0226.png
-     ./images/male0227.png
-     ./images/male0228.png
-     ./images/male0229.png
-     ./images/male0230.png
-     ./images/male0231.png
-     ./images/male0232.png
-     ./images/male0233.png
-     ./images/male0234.png
-     ./images/male0235.png
-     ./images/male0236.png
-     ./images/male0237.png
-     ./images/male0238.png
-     ./images/male0239.png
-     ./images/male0240.png
-     ./images/male0241.png
-     ./images/male0242.png
-     ./images/male0243.png
-     ./images/male0244.png
-     ./images/male0245.png
-     ./images/male0246.png
-     ./images/male0247.png
-     ./images/male0248.png
-     ./images/male0249.png
-     ./images/male0250.png
-     ./images/male0251.png
-     ./images/male0252.png
-     ./images/male0253.png
-     ./images/male0254.png
-     ./images/male0255.png
-     ./images/male0256.png
-     ./images/male0257.png
-     ./images/male0258.png
-     ./images/male0259.png
-     ./images/male0260.png
-     ./images/male0261.png
-     ./images/male0262.png
-     ./images/male0263.png
-     ./images/male0264.png
-     ./images/male0265.png
-     ./images/male0266.png
-     ./images/male0267.png
-     ./images/male0268.png
-     ./images/male0269.png
-     ./images/male0270.png
-     ./images/male0271.png
-     ./images/male0272.png
-     ./images/male0273.png
-     ./images/male0274.png
-     ./images/male0275.png
-     ./images/male0276.png
-     ./images/male0277.png
-     ./images/male0278.png
-     ./images/male0279.png
-     ./images/male0280.png
-     ./images/male0281.png
-     ./images/male0282.png
-     ./images/male0283.png
-     ./images/male0284.png
-     ./images/male0285.png
-     ./images/male0286.png
-     ./images/male0287.png
-     ./images/male0288.png
-     ./images/male0289.png
-     ./images/male0290.png
-     ./images/male0291.png
-     ./images/male0292.png
-     ./images/male0293.png
-     ./images/male0294.png
-     ./images/male0295.png
-     ./images/male0296.png
-     ./images/male0297.png
-     ./images/male0298.png
-     ./images/male0299.png
-     ./images/male0300.png
+./canvas/0001.png
+./canvas/0002.png
+./canvas/0003.png
+./canvas/0004.png
+./canvas/0005.png
+./canvas/0006.png
+./canvas/0007.png
+./canvas/0008.png
+./canvas/0009.png
+./canvas/0010.png
+./canvas/0011.png
+./canvas/0012.png
+./canvas/0013.png
+./canvas/0014.png
+./canvas/0015.png
+./canvas/0016.png
+./canvas/0017.png
+./canvas/0018.png
+./canvas/0019.png
+./canvas/0020.png
+./canvas/0021.png
+./canvas/0022.png
+./canvas/0023.png
+./canvas/0024.png
+./canvas/0025.png
+./canvas/0026.png
+./canvas/0027.png
+./canvas/0028.png
+./canvas/0029.png
+./canvas/0030.png
+./canvas/0031.png
+./canvas/0032.png
+./canvas/0033.png
+./canvas/0034.png
+./canvas/0035.png
+./canvas/0036.png
+./canvas/0037.png
+./canvas/0038.png
+./canvas/0039.png
+./canvas/0040.png
+./canvas/0041.png
+./canvas/0042.png
+./canvas/0043.png
+./canvas/0044.png
+./canvas/0045.png
+./canvas/0046.png
+./canvas/0047.png
+./canvas/0048.png
+./canvas/0049.png
+./canvas/0050.png
+./canvas/0051.png
+./canvas/0052.png
+./canvas/0053.png
+./canvas/0054.png
+./canvas/0055.png
+./canvas/0056.png
+./canvas/0057.png
+./canvas/0058.png
+./canvas/0059.png
+./canvas/0060.png
+./canvas/0061.png
+./canvas/0062.png
+./canvas/0063.png
+./canvas/0064.png
+./canvas/0065.png
+./canvas/0066.png
+./canvas/0067.png
+./canvas/0068.png
+./canvas/0069.png
+./canvas/0070.png
+./canvas/0071.png
+./canvas/0072.png
+./canvas/0073.png
+./canvas/0074.png
+./canvas/0075.png
+./canvas/0076.png
+./canvas/0077.png
+./canvas/0078.png
+./canvas/0079.png
+./canvas/0080.png
+./canvas/0081.png
+./canvas/0082.png
+./canvas/0083.png
+./canvas/0084.png
+./canvas/0085.png
+./canvas/0086.png
+./canvas/0087.png
+./canvas/0088.png
+./canvas/0089.png
+./canvas/0090.png
+./canvas/0091.png
+./canvas/0092.png
+./canvas/0093.png
+./canvas/0094.png
+./canvas/0095.png
+./canvas/0096.png
+./canvas/0097.png
+./canvas/0098.png
+./canvas/0099.png
+./canvas/0100.png
+./canvas/0101.png
+./canvas/0102.png
+./canvas/0103.png
+./canvas/0104.png
+./canvas/0105.png
+./canvas/0106.png
+./canvas/0107.png
+./canvas/0108.png
+./canvas/0109.png
+./canvas/0110.png
+./canvas/0111.png
+./canvas/0112.png
+./canvas/0113.png
+./canvas/0114.png
+./canvas/0115.png
+./canvas/0116.png
+./canvas/0117.png
+./canvas/0118.png
+./canvas/0119.png
+./canvas/0120.png
+./canvas/0121.png
+./canvas/0122.png
+./canvas/0123.png
+./canvas/0124.png
+./canvas/0125.png
+./canvas/0126.png
+./canvas/0127.png
+./canvas/0128.png
+./canvas/0129.png
+./canvas/0130.png
+./canvas/0131.png
+./canvas/0132.png
+./canvas/0133.png
+./canvas/0134.png
+./canvas/0135.png
+./canvas/0136.png
+./canvas/0137.png
+./canvas/0138.png
+./canvas/0139.png
+./canvas/0140.png
+./canvas/0141.png
+./canvas/0142.png
+./canvas/0143.png
+./canvas/0144.png
+./canvas/0145.png
+./canvas/0146.png
+./canvas/0147.png
+./canvas/0148.png
+./canvas/0149.png
+./canvas/0150.png
+./canvas/0151.png
+./canvas/0152.png
+./canvas/0153.png
+./canvas/0154.png
+./canvas/0155.png
+./canvas/0156.png
+./canvas/0157.png
+./canvas/0158.png
+./canvas/0159.png
+./canvas/0160.png
+./canvas/0161.png
+./canvas/0162.png
+./canvas/0163.png
+./canvas/0164.png
+./canvas/0165.png
+./canvas/0166.png
+./canvas/0167.png
+./canvas/0168.png
+./canvas/0169.png
+./canvas/0170.png
+./canvas/0171.png
+./canvas/0172.png
+./canvas/0173.png
+./canvas/0174.png
+./canvas/0175.png
+./canvas/0176.png
+./canvas/0177.png
+./canvas/0178.png
+./canvas/0179.png
+./canvas/0180.png
+./canvas/0181.png
+./canvas/0182.png
+./canvas/0183.png
+./canvas/0184.png
+./canvas/0185.png
+./canvas/0186.png
+./canvas/0187.png
+./canvas/0188.png
+./canvas/0189.png
+./canvas/0190.png
+./canvas/0191.png
+./canvas/0192.png
+./canvas/0193.png
+./canvas/0194.png
+./canvas/0195.png
+./canvas/0196.png
+./canvas/0197.png
+./canvas/0198.png
+./canvas/0199.png
+./canvas/0200.png
+./canvas/0201.png
+./canvas/0202.png
+./canvas/0203.png
+./canvas/0204.png
+./canvas/0205.png
+./canvas/0206.png
+./canvas/0207.png
+./canvas/0208.png
+./canvas/0209.png
+./canvas/0210.png
+./canvas/0211.png
+./canvas/0212.png
+./canvas/0213.png
+./canvas/0214.png
+./canvas/0215.png
+./canvas/0216.png
+./canvas/0217.png
+./canvas/0218.png
+./canvas/0219.png
+./canvas/0220.png
+./canvas/0221.png
+./canvas/0222.png
+./canvas/0223.png
+./canvas/0224.png
+./canvas/0225.png
+./canvas/0226.png
+./canvas/0227.png
+./canvas/0228.png
+./canvas/0229.png
+./canvas/0230.png
+./canvas/0231.png
+./canvas/0232.png
+./canvas/0233.png
+./canvas/0234.png
+./canvas/0235.png
+./canvas/0236.png
+./canvas/0237.png
+./canvas/0238.png
+./canvas/0239.png
+./canvas/0240.png
+./canvas/0241.png
+./canvas/0242.png
+./canvas/0243.png
+./canvas/0244.png
+./canvas/0245.png
+./canvas/0246.png
+./canvas/0247.png
+./canvas/0248.png
+./canvas/0249.png
+./canvas/0250.png
+./canvas/0251.png
+./canvas/0252.png
+./canvas/0253.png
+./canvas/0254.png
+./canvas/0255.png
+./canvas/0256.png
+./canvas/0257.png
+./canvas/0258.png
+./canvas/0259.png
+./canvas/0260.png
+./canvas/0261.png
+./canvas/0262.png
+./canvas/0263.png
+./canvas/0264.png
+./canvas/0265.png
+./canvas/0266.png
+./canvas/0267.png
+./canvas/0268.png
+./canvas/0269.png
+./canvas/0270.png
+./canvas/0271.png
+./canvas/0272.png
+./canvas/0273.png
+./canvas/0274.png
+./canvas/0275.png
+./canvas/0276.png
+./canvas/0277.png
+./canvas/0278.png
+./canvas/0279.png
+./canvas/0280.png
+./canvas/0281.png
+./canvas/0282.png
+./canvas/0283.png
+./canvas/0284.png
+./canvas/0285.png
+./canvas/0286.png
+./canvas/0287.png
+./canvas/0288.png
+./canvas/0289.png
+./canvas/0290.png
+./canvas/0291.png
+./canvas/0292.png
+./canvas/0293.png
+./canvas/0294.png
+./canvas/0295.png
+./canvas/0296.png
+./canvas/0297.png
+./canvas/0298.png
+./canvas/0299.png
+./canvas/0300.png
+./canvas/0301.png
+./canvas/0302.png
+./canvas/0303.png
+./canvas/0304.png
+./canvas/0305.png
+./canvas/0306.png
+./canvas/0307.png
+./canvas/0308.png
+./canvas/0309.png
+./canvas/0310.png
+./canvas/0311.png
+./canvas/0312.png
+./canvas/0313.png
+./canvas/0314.png
+./canvas/0315.png
+./canvas/0316.png
+./canvas/0317.png
+./canvas/0318.png
+./canvas/0319.png
+./canvas/0320.png
+./canvas/0321.png
+./canvas/0322.png
+./canvas/0323.png
+./canvas/0324.png
+./canvas/0325.png
+./canvas/0326.png
+./canvas/0327.png
+./canvas/0328.png
+./canvas/0329.png
+./canvas/0330.png
+./canvas/0331.png
+./canvas/0332.png
+./canvas/0333.png
+./canvas/0334.png
+./canvas/0335.png
+./canvas/0336.png
+./canvas/0337.png
+./canvas/0338.png
+./canvas/0339.png
+./canvas/0340.png
+./canvas/0341.png
+./canvas/0342.png
+./canvas/0343.png
+./canvas/0344.png
+./canvas/0345.png
+./canvas/0346.png
+./canvas/0347.png
+./canvas/0348.png
+./canvas/0349.png
+./canvas/0350.png
+./canvas/0351.png
+./canvas/0352.png
+./canvas/0353.png
+./canvas/0354.png
+./canvas/0355.png
+./canvas/0356.png
+./canvas/0357.png
+./canvas/0358.png
+./canvas/0359.png
+./canvas/0360.png
+./canvas/0361.png
+./canvas/0362.png
+./canvas/0363.png
+./canvas/0364.png
+./canvas/0365.png
+./canvas/0366.png
+./canvas/0367.png
+./canvas/0368.png
+./canvas/0369.png
+./canvas/0370.png
+./canvas/0371.png
+./canvas/0372.png
+./canvas/0373.png
+./canvas/0374.png
+./canvas/0375.png
+./canvas/0376.png
+./canvas/0377.png
+./canvas/0378.png
+./canvas/0379.png
+./canvas/0380.png
+./canvas/0381.png
+./canvas/0382.png
+./canvas/0383.png
+./canvas/0384.png
+./canvas/0385.png
+./canvas/0386.png
+./canvas/0387.png
+./canvas/0388.png
+./canvas/0389.png
+./canvas/0390.png
+./canvas/0391.png
+./canvas/0392.png
+./canvas/0393.png
+./canvas/0394.png
+./canvas/0395.png
+./canvas/0396.png
+./canvas/0397.png
+./canvas/0398.png
+./canvas/0399.png
+./canvas/0400.png
+./canvas/0401.png
+./canvas/0402.png
+./canvas/0403.png
+./canvas/0404.png
+./canvas/0405.png
+./canvas/0406.png
+./canvas/0407.png
+./canvas/0408.png
+./canvas/0409.png
+./canvas/0410.png
+./canvas/0411.png
+./canvas/0412.png
+./canvas/0413.png
+./canvas/0414.png
+./canvas/0415.png
+./canvas/0416.png
+./canvas/0417.png
+./canvas/0418.png
+./canvas/0419.png
+./canvas/0420.png
+./canvas/0421.png
+./canvas/0422.png
+./canvas/0423.png
+./canvas/0424.png
+./canvas/0425.png
+./canvas/0426.png
+./canvas/0427.png
+./canvas/0428.png
+./canvas/0429.png
+./canvas/0430.png
+./canvas/0431.png
+./canvas/0432.png
+./canvas/0433.png
+./canvas/0434.png
+./canvas/0435.png
+./canvas/0436.png
+./canvas/0437.png
+./canvas/0438.png
+./canvas/0439.png
+./canvas/0440.png
+./canvas/0441.png
+./canvas/0442.png
+./canvas/0443.png
+./canvas/0444.png
+./canvas/0445.png
+./canvas/0446.png
+./canvas/0447.png
+./canvas/0448.png
+./canvas/0449.png
+./canvas/0450.png
+./canvas/0451.png
+./canvas/0452.png
+./canvas/0453.png
+./canvas/0454.png
+./canvas/0455.png
+./canvas/0456.png
+./canvas/0457.png
+./canvas/0458.png
+./canvas/0459.png
+./canvas/0460.png
+./canvas/0461.png
+./canvas/0462.png
+./canvas/0463.png
+./canvas/0464.png
+./canvas/0465.png
+./canvas/0466.png
+./canvas/0467.png
+./canvas/0468.png
+./canvas/0469.png
  `;
   return data.split("\n")[index];
 }
 
-const frameCount = 300;
+const frameCount = 469;
 
 const images = [];
 const imageSeq = {
@@ -405,6 +572,7 @@ function scaleImage(img, ctx) {
     img.height * ratio
   );
 }
+
 ScrollTrigger.create({
   trigger: "#page>canvas",
   pin: true,
@@ -413,38 +581,36 @@ ScrollTrigger.create({
   end: `600% top`,
 });
 
+gsap.to("#page1", {
+  scrollTrigger: {
+    trigger: `#page1`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
+gsap.to("#page2", {
+  scrollTrigger: {
+    trigger: `#page2`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
+gsap.to("#page3", {
+  scrollTrigger: {
+    trigger: `#page3`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
 
+const gitHubButton = document.getElementById("github");
 
-gsap.to("#page1",{
-  scrollTrigger:{
-    trigger:`#page1`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
-gsap.to("#page2",{
-  scrollTrigger:{
-    trigger:`#page2`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
-gsap.to("#page3",{
-  scrollTrigger:{
-    trigger:`#page3`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
-
-const gitHubButton = document.getElementById('github');
-
-gitHubButton.onclick = function (){
-  window.open("https://github.com/PankajKorkalai","_self");
-}
+gitHubButton.onclick = function () {
+  window.open("https://github.com/PankajKorkalai", "_self");
+};
